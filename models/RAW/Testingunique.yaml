@@ -6,8 +6,13 @@ models:
       - name: unique_value
         tests:
           - unique
-          - not_null
+          - not_null   
 
-     
-          
+models:
+  - name: RAW_CUSTOMER
+    columns:
+      - name: CUSTOMER_NAME
+        tests:
+          - accepted_values:
+              values: ['John Doe','Jane Smith','Alice Johnson','AshikRoshan']       
 
