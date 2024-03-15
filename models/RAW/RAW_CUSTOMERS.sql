@@ -6,3 +6,5 @@
 
 select * from DBT_SOURCE.PUBLIC.CUSTOMERS
 
+
+
