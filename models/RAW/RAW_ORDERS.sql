@@ -4,4 +4,4 @@
     )
 }}
 
-select * from DEMO_DATABASE_DBT_TABLE.PUBLIC.TABLE1
+select * from DBT_SOURCE.PUBLIC.ORDERS
