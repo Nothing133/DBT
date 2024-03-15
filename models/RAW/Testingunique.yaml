@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: TestUnique
+    columns:
+      - name: unique_value
+        tests:
+          - unique
+          - not_null
+
+     
+          
+
