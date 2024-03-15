@@ -8,3 +8,6 @@ SELECT
 FROM {{ ref('RAW_CUSTOMERS') }} as c
 JOIN  {{ ref('RAW_ORDERS') }} as o 
 ON c.customer_id = o.customer_id
+
+
+

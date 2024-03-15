@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo
+    database: dbt_source
+    schema: public
+    tables:
+      - name: customers
+      - name: orders
