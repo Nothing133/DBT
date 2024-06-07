@@ -1,0 +1,60 @@
+version: 2
+
+sources:
+  - name: PSQLSOURCE
+    database: RSMIGRATION
+    schema: STAGING_PSQL
+    tables:
+      - name: ACCOUNT_ACCOUNT
+        description: "Description of your table"
+        tests:
+          - unique:
+              columns: [id]
+              severity: error
+          - not_null:
+              columns: [id, name]
+              severity: error
+
+      - name: ACCOUNT_ACCOUNT_ACCOUNT_TAG
+        description: "Description of another table"
+        tests:
+          - unique:
+              columns: [account_account_tag_id, account_account_id]
+              severity: error
+          - not_null:
+              columns: [account_account_tag_id, account_account_id]
+              severity: error
+
+      - name: ACCOUNT_ACCOUNT_FINANCIAL_REPORT
+        description: "Description of another table"
+        tests:
+          - unique:
+              columns: [report_line_id, account_id]
+              severity: error
+          - not_null:
+              columns: [report_line_id, account_id]
+              severity: error
+  
+  - name: MYSQLSOURCE
+    database: RSMIGRATION
+    schema: STAGING_MYSQL
+    tables:
+      - name: BILLABLE_HISTORY
+        description: "Description of your table"
+        tests:
+          - unique:
+              columns: [id]
+              severity: error
+          - not_null:
+              columns: [id, user_id, is_billable, effective_from, created_at, updated_at]
+              severity: error
+
+      - name: BUSINESS_UNIT
+        description: "Description of another table"
+        tests:
+          - unique:
+              columns: [id]
+              severity: error
+          - not_null:
+              columns: [id, bu_name]
+              severity: error
