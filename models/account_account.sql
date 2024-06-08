@@ -1,4 +1,4 @@
--- models/account_account_model.sql
+-- models/account_account.sql
 
 {{ config(materialized='table') }}
 
