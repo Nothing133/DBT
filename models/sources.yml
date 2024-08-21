@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: STG
+    database: DEMO_DB
+    schema: SRC
+    tables:
+      - name: STG_ES_BYOD_PROJ_HOUR_COST_PRICE
+ 
