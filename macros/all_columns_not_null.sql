@@ -1,4 +1,4 @@
-{% macro all_columns_not_null(model, exclude_column_list=[]) %}
+{% macro all_columns_not_null(model, exclude_column_list) %}
     {%- if execute -%}
     {%- set model_columns = adapter.get_columns_in_relation(model) -%}
 
