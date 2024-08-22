@@ -1,10 +1,5 @@
-version: 2
-
 models:
   - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
-    description: "Test to ensure no columns in this table contain NULL values, except those explicitly excluded."
     tests:
-      - all_columns_not_null:
-          exclude_column_list: 
-            - RESOURCECOMPANYID
-            - PARTITION
+      - test_all_columns_not_null:
+          exclude_column_list: ['RESOURCECOMPANYID', 'PARTITION']
