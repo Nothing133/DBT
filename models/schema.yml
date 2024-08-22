@@ -5,4 +5,23 @@ models:
     columns:
       - name: DEFINITIONGROUP
       - name: EXECUTIONID
-
+      - name: ISSELECTED
+      - name: TRANSFERSTATUS
+      - name: CATEGORYID
+      - name: COSTPRICE
+      - name: EFFECTIVELABORRATE
+      - name: ISRESOURCERATE
+      - name: PROJECTID
+      - name: CUSTOMERACCOUNT
+      - name: PRICEGROUPID
+      - name: PROJECTCONTRACTID
+      - name: RESOURCECATEGORY
+      - name: TRANSDATE
+      - name: RESOURCEID
+      - name: RESOURCECATEGORYID
+      - name: RESOURCECOMPANYID
+      - name: PARTITION
+      - name: DATAAREAID
+      - name: SYNCSTARTDATETIME
+      - name: RECID
+      - name: SF_INSERT_TIMESTAMP
