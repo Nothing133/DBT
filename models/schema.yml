@@ -1,27 +1,7 @@
-version: 2
-
 models:
   - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
-    columns:
-      - name: DEFINITIONGROUP
-      - name: EXECUTIONID
-      - name: ISSELECTED
-      - name: TRANSFERSTATUS
-      - name: CATEGORYID
-      - name: COSTPRICE
-      - name: EFFECTIVELABORRATE
-      - name: ISRESOURCERATE
-      - name: PROJECTID
-      - name: CUSTOMERACCOUNT
-      - name: PRICEGROUPID
-      - name: PROJECTCONTRACTID
-      - name: RESOURCECATEGORY
-      - name: TRANSDATE
-      - name: RESOURCEID
-      - name: RESOURCECATEGORYID
-      - name: RESOURCECOMPANYID
-      - name: PARTITION
-      - name: DATAAREAID
-      - name: SYNCSTARTDATETIME
-      - name: RECID
-      - name: SF_INSERT_TIMESTAMP
+    tests:
+      - all_columns_not_null:
+          exclude_column_list: 
+            - RESOURCECOMPANYID
+            - PARTITION
