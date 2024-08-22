@@ -1,5 +1,5 @@
 {% macro check_columns_not_null(model) %}
-  {% set column_list = meta.get('column_list', []) %}
+  {% set column_list = metadata.get('column_list', []) %}
   
   {% if column_list|length == 0 %}
     {% do log("No columns defined in schema.yml", info=True) %}
