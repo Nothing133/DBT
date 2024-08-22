@@ -3,8 +3,5 @@ version: 2
 models:
   - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
     tests:
-      - not_null_test:
-          macro: test_columns_not_null
-          args:
-            - ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
-            - ["RESOURCECOMPANYID", "PARTITION"] # Columns to exclude from the NOT NULL check
+      - all_columns_not_null:
+          exclude_column_list: ['RESOURCECOMPANYID', 'PARTITION']  # List columns to exclude from null checks
