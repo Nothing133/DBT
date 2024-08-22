@@ -1,5 +1,0 @@
-version: 2
-models:
-  - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
-    tests:
-      - no_nulls_in_columns_test

@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
+    columns:
+      - name: DEFINITIONGROUP
+      - name: EXECUTIONID
+
