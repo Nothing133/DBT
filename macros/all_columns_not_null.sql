@@ -7,7 +7,7 @@
 
         {%- for col in model_columns if col.column|upper not in exclude_column_list|map('upper') %}
         -- Add SQL for checking null values in the current column
-        {%- set sql_string = sql_string + "select count(*) as c from (select " + col.column + " from " + model + " where " + col.column + " is null) having c > 0" -%}
+        {%- set sql_string = sql_string + "select count(*) as c from (select " + col.column + " from " + model + " where " + col.column + " is null) having c > 0)" -%}
 
         -- Add UNION ALL unless it's the last column
         {%- if not loop.last %}
