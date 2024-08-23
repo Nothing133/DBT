@@ -5,20 +5,15 @@
     -- Initialize an empty string to hold the generated SQL
     {%- set sql_string = "" -%}
 
-    {%- for col in model_columns %}
-        {%- if col.column|upper not in exclude_column_list|map('upper') %}
-            -- Add SQL for checking null values in the current column
-            {%- set sql_string = sql_string + "select count(*) as c from " + model + " where " + col.column + " is null" -%}
-
-            -- Add UNION ALL unless it's the last column
-            {%- if not loop.last %}
-                {%- set sql_string = sql_string + " union all " -%}
-            {%- endif %}
+    {%- for col in model_columns if col.column|upper not in exclude_column_list|map('upper') %}
+        -- Add SQL for checking null values in the current column
+        {%- set sql_string = sql_string + "select count(*) as c from (select " + col.column + " from " + model + " where " + col.column + " is null) having c > 0" -%}
+        
+        -- Add UNION ALL unless it's the last column
+        {%- if not loop.last %}
+        {%- set sql_string = sql_string + " union all " -%}
         {%- endif %}
     {%- endfor -%}
-
-    -- Add a final HAVING clause to ensure any counts > 0
-    {%- set sql_string = sql_string + " having sum(c) > 0" -%}
 
     -- Return the complete SQL string
     {{ sql_string }}
