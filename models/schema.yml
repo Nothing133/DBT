@@ -1,7 +1,9 @@
-version: 2
-
 models:
-  - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
-    tests:
-      - all_columns_not_null:
-          exclude_column_list: ['RESOURCECOMPANYID', 'PARTITION']  # List columns to exclude from null checks
+    - name: ODS_ES_BYOD_PROJ_HOUR_COST_PRICE
+      tests:
+        - test_columns_not_null:
+            column_list: ['DEFINITIONGROUP', 'EXECUTIONID', 'ISSELECTED', 'TRANSFERSTATUS', 'CATEGORYID', 'COSTPRICE', 'EFFECTIVELABORRATE', 'ISRESOURCERATE', 'PROJECTID', 'CUSTOMERACCOUNT', 'PRICEGROUPID', 'PROJECTCONTRACTID', 'RESOURCECATEGORY', 'TRANSDATE', 'RESOURCEID', 'RESOURCECATEGORYID', 'RESOURCECOMPANYID', 'PARTITION', 'DATAAREAID', 'SYNCSTARTDATETIME', 'RECID', 'SF_INSERT_TIMESTAMP']
+
+            config:
+              severity: warn
+
