@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo_staging  # New source name
+    description: "Demo staging tables"
+    schema: staging      # Schema containing the table
+    tables:
+      - name: stg_es_aesop_ref_waste_type
+        description: "Table containing waste type information for the demo environment."
