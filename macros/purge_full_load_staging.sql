@@ -1,6 +1,6 @@
-{% macro purge_full_load_staging(source_name, table_name, dedup_keys) %}
+{% macro purge_full_load_staging(table_name, dedup_keys) %}
     -- Join dedup_keys for use in SQL
-    {% set dedup_columns_sql = dedup_keys | join(', ') %}
+    --{% set dedup_columns_sql = dedup_keys | join(', ') %}
 
     -- Perform deduplication
     delete from {{ source('demo_staging', table_name) }}  -- Use the new source name
