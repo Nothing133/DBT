@@ -1,0 +1,1 @@
+{{purge_full_load_staging('staging','STG_ES_AESOP_REF_WASTE_TYPE')}}
