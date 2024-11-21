@@ -1,1 +1,0 @@
-select * from demo.staging.STG_ES_EQAI_RECEIPT
